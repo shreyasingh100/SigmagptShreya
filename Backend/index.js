@@ -2,7 +2,7 @@ import express from "express";
 import "dotenv/config";
 import cors from "cors";
 import mongoose from "mongoose";
-//import chatRoutes from "./routes/chat.js";
+import chatRoutes from "./routes/chat.js";
 
 const app = express();
 const PORT = 8080;
@@ -10,7 +10,7 @@ const PORT = 8080;
 app.use(express.json());
 app.use(cors());
 
-//app.use("/api", chatRoutes);
+app.use("/api", chatRoutes);
 
 app.listen(PORT, () => {
     console.log(`server running on ${PORT}`);
